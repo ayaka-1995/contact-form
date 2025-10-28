@@ -17,34 +17,35 @@
 
     <main>
         <div class="confirm__content">
-            <div class="conform__heading">
+            <div class="confirm__heading">
                 <h2>お問い合わせ内容</h2>
             </div>
-            <form class="form" action="">
+            <form class="form" action="/contacts" method="post">
+                @csrf
                 <div class="confirm-table">
-                    <table class="conform_table__inner">
-                        <tr class="confirm_table__row">
-                            <th class="conform_table__header">お名前</th>
-                            <td class="conform_table__text">
-                                <input type="text" name="name" value="サンプルテキスト">
+                    <table class="confirm-table__inner">
+                        <tr class="confirm-table__row">
+                            <th class="confirm-table__header">お名前</th>
+                            <td class="confirm-table__text">
+                                <input type="text" name="name" value="{{ $contact['name']}}" readonly />
                             </td>
                         </tr>
-                        <tr class="confirm_table__row">
-                            <th class="confirm_table__header">メールアドレス</th>
+                        <tr class="confirm-table__row">
+                            <th class="confirm-table__header">メールアドレス</th>
                             <td class="confirm-table__text">
-                                <input type="email" name="email" value="サンプルテキスト">
+                                <input type="email" name="email" value="{{ $contact['email']}}" readonly />
                             </td>
                         </tr>
-                        <tr class="confirm_table__row">
-                            <th class="confirm_table__header">電話番号</th>
+                        <tr class="confirm-table__row">
+                            <th class="confirm-table__header">電話番号</th>
                             <td class="confirm-table__text">
-                                <input type="tel" name="tel" value="サンプルテキスト">
+                                <input type="tel" name="tel" value="{{ $contact['tel'] }}" readonly />
                             </td>
                         </tr>
-                        <tr class="confirm_table__row">
-                            <th class="confirm_table__header">お問い合わせ内容</th>
+                        <tr class="confirm-table__row">
+                            <th class="confirm-table__header">お問い合わせ内容</th>
                             <td class="confirm-table__text">
-                                <input type="text" name="content" value="サンプルテキスト">
+                                <input type="text" name="content" value="{{ $contact['content'] }}" readonly />
                             </td>
                         </tr>
                     </table>
